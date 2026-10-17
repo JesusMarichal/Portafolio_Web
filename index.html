@@ -1,123 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Jesús Marichal, Desarrollador Full Stack.">
     <link rel="icon" href="Recursos/Favicon.png" type="image/png">
-    <link rel="stylesheet" type= "text/css" href="Estilos/estilos.css">
-    <script src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Estilos/estilos.css">
+    <script src="script.js" defer></script>
     <title>Portafolio - Jesus Marichal</title>
 </head>
 <body>
-    <!-- Preloader HTML -->
-    <div id="loader" class="nfLoader"></div>
-    <!--Preloader HTML  -->
+    <!-- Iconos (estilo Lucide) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+        <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+        <symbol id="i-tv" viewBox="0 0 24 24"><rect width="20" height="15" x="2" y="7" rx="2"/><polyline points="17 2 12 7 7 2"/></symbol>
+        <symbol id="i-dashboard" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+        <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+        <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+        <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+        <symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 7V4H6l6 8-6 8h12v-3"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+        <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+    </svg>
 
-    
+    <!-- Preloader -->
+    <div id="loader" class="loader"><span></span></div>
+
     <header class="header">
-        <div class="logo">
+        <a href="#inicio" class="logo">
             <img src="Recursos/Favicon.png" alt="Logo Jesus_Marichal">
-        </div>
+            <span>Jesús<b>.</b></span>
+        </a>
+
+        <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
 
         <nav class="nav-menu">
             <ul class="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#herramientas">Herramientas</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-cta">Contacto</a></li>
             </ul>
         </nav>
-    </header>   
-    <!-- Seccion Principal-->
-    <div class="img-info">
-        <img src="Recursos/Imagen de WhatsApp 2023-10-07 a las 11.43.36_724ef255.jpg" alt="Foto Jesus_Marichal">
-    </div>
-    <section class="Home-info">
-        <div class="home">
-            <div class="titulo">
-                <span class="uno">Hola</span>
-                <span class="dos">Yo soy</span>
+    </header>
+
+    <main>
+        <!-- Seccion Principal -->
+        <section class="hero" id="inicio">
+            <div class="hero-text reveal">
+                <div class="titulo">
+                    <span class="uno">Hola</span>
+                    <span class="dos">Yo soy</span>
+                </div>
+                <h1>Jesús <span>Marichal</span></h1>
+                <h3>Desarrollador Full Stack</h3>
+                <p>Construyo aplicaciones web y móviles de principio a fin: interfaces cuidadas,
+                    APIs sólidas y la infraestructura que las mantiene en línea.</p>
+                <div class="hero-btns">
+                    <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+                    <a href="#contacto" class="btn btn-ghost">Contactame!</a>
+                </div>
             </div>
-            <h1><i>Jesús Marichal</i></h1>
-            <h3><i>Junior Developers</i></h3>
-            <p>Soy Desarrollador de software de nivel básico, 
-            que ayuda al desarrollo de todos los aspectos de diseño y codificación de software.</p>
-            <div class="contacto-btn">
-                <a href="#" class="btn1">Contactame!</a>
+            <div class="hero-img reveal">
+                <div class="foto">
+                    <img src="Recursos/Imagen de WhatsApp 2023-10-07 a las 11.43.36_724ef255.jpg" alt="Foto Jesus_Marichal">
+                </div>
+                <span class="chip chip-1"><svg class="ic"><use href="#i-code"/></svg> Full Stack</span>
+                <span class="chip chip-2"><svg class="ic"><use href="#i-phone"/></svg> Web &amp; Móvil</span>
+                <span class="chip chip-3"><svg class="ic"><use href="#i-server"/></svg> DevOps</span>
             </div>
-        </div>
-    </section>
-    <br>
-    <!-- Seccion Sobre Mi -->
-    <!--<section class="acerca-de">
-        <div class="container">
-            <h1><i>¿Quien Soy?</i></h1>
-            <hr>
-            <p>Soy estudiante de Licenciatura informática en el quinto semestre, 
-                con conocimientos en Estructuras de Datos y experiencia en varios lenguajes de Programación. 
-                Tengo una actitud positiva, con alta motivación por aprender y adquirir experiencia.
-                 Soy proactivo y autodidacta. Me esfuerzo por entregar proyectos de calidad,
-                buscando soluciones eficientes en equipo y aportando un valor agregado. 
-            </p>
-        </div>
-    </section> -->
-    <!--Seccion Conocimientos-->
-    <!--<section class="conocimientos">
-        <div class="container2">
-            <h1><i>Conocimientos</i></h1>
-            <hr>
-            <br>
-            <div class="container-progress">
-                <label for="python-info">Python</label>
-                <progress class="Progress-bar" style="--w:40%" id="python-info" max="100" value="45">50%</progress>
-                <label for="html-info">Html</label>
-                <progress class="Progress-bar" style="--w:40%" id="html-info" max="100" value="75">70%</progress>
-                <label for="JavaScript-info">JavaScript</label>
-                <progress class="Progress-bar" style="--w:40%" id="JavaScript-info" max="100" value="50">50%</progress>
-                <label for="java-info">Java</label>
-                <progress class="Progress-bar" style="--w:40%" id="Java-info" max="100" value="55">55%</progress>
-                <label for="css-info">CSS</label>
-                <progress class="Progress-bar" style="--w:40%" id="css-info" max="100" value="55">70%</progress>
+        </section>
+
+        <!-- Seccion Herramientas -->
+        <section class="herramientas" id="herramientas">
+            <div class="section-head reveal">
+                <span class="eyebrow">// 01 · Stack</span>
+                <h2>Mi caja de <span class="grad">herramientas</span></h2>
+                <hr>
+                <p>Lo que uso para llevar una idea desde la base de datos hasta la pantalla del usuario.</p>
             </div>
-        </div>
-    </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br> -->
+            <div class="carrusel reveal">
+                <div class="carrusel-track" data-row="0"></div>
+            </div>
+            <div class="carrusel reveal">
+                <div class="carrusel-track reverse" data-row="1"></div>
+            </div>
+        </section>
 
+        <!-- Seccion Proyectos -->
+        <section class="proyectos" id="proyectos">
+            <div class="section-head reveal">
+                <span class="eyebrow">// 02 · Proyectos</span>
+                <h2>Ideas que convertí en <span class="grad">producto</span></h2>
+                <hr>
+                <p>Desde plataformas en producción con usuarios reales hasta experimentos con IA y ciberseguridad.</p>
+            </div>
 
+            <!-- PrimeMax -->
+            <article class="primemax reveal">
+                <div class="pm-intro">
+                    <div class="pm-texto">
+                        <span class="pm-badge"><svg class="ic"><use href="#i-star"/></svg> Proyecto principal · En producción</span>
+                        <img src="Recursos/primemax-logo.png" alt="PrimeMax" class="pm-logo">
+                        <p>Plataforma de streaming propia, construida de punta a punta: apps para celular,
+                            computadora y Smart TV conectadas a un panel que administra usuarios, planes,
+                            pagos y revendedores. Películas, series y TV en vivo desde cualquier pantalla.</p>
+                        <div class="links">
+                            <a href="https://primemax.lat" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg> primemax.lat <svg class="ic"><use href="#i-arrow"/></svg></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.primemax.player" target="_blank" rel="noopener"><svg class="ic"><use href="#i-play"/></svg> Google Play <svg class="ic"><use href="#i-arrow"/></svg></a>
+                        </div>
+                    </div>
+                    <ul class="pm-datos">
+                        <li><b>3</b><span>aplicaciones conectadas</span></li>
+                        <li><b>5</b><span>plataformas: Android, iOS, Windows, Web y TV</span></li>
+                        <li><b>1</b><span>backend que lo controla todo</span></li>
+                    </ul>
+                </div>
 
+                <h3 class="pm-subtitulo">¿Cómo funciona?</h3>
+                <ol class="pm-flujo">
+                    <li>
+                        <span class="paso">01</span>
+                        <h4>Registro</h4>
+                        <p>El usuario crea su cuenta con correo (con verificación por email) o con Google.</p>
+                    </li>
+                    <li>
+                        <span class="paso">02</span>
+                        <h4>Elige un plan</h4>
+                        <p>Paga con Stripe y ve el precio en bolívares calculado con la tasa del día.</p>
+                    </li>
+                    <li>
+                        <span class="paso">03</span>
+                        <h4>Se activa el acceso</h4>
+                        <p>El panel le asigna su contenido y una tarea programada vence las suscripciones al minuto exacto.</p>
+                    </li>
+                    <li>
+                        <span class="paso">04</span>
+                        <h4>A disfrutar</h4>
+                        <p>En la TV inicia sesión escaneando un QR con el celular, sin escribir contraseñas con el control.</p>
+                    </li>
+                </ol>
 
+                <div class="pm-piezas">
+                    <div class="pieza">
+                        <span class="pieza-icono"><svg class="ic"><use href="#i-phone"/></svg></span>
+                        <h4>App móvil y escritorio</h4>
+                        <p>Reproductor con media_kit, favoritos e historial guardados en una base de datos local
+                            y actualizaciones automáticas.</p>
+                        <ul class="stack"><li>Flutter</li><li>Dart</li><li>Drift / SQLite</li></ul>
+                    </div>
+                    <div class="pieza">
+                        <span class="pieza-icono"><svg class="ic"><use href="#i-tv"/></svg></span>
+                        <h4>App para Smart TV</h4>
+                        <p>Interfaz pensada para el control remoto, reproductor VLC para canales en vivo
+                            y activación por código o QR.</p>
+                        <ul class="stack"><li>React Native TV</li><li>TypeScript</li><li>VLC</li></ul>
+                    </div>
+                    <div class="pieza">
+                        <span class="pieza-icono"><svg class="ic"><use href="#i-dashboard"/></svg></span>
+                        <h4>Panel administrativo</h4>
+                        <p>API con JWT, roles y verificación en dos pasos. Gestiona planes, facturas,
+                            comisiones de revendedores y pagos.</p>
+                        <ul class="stack"><li>NestJS</li><li>React</li><li>MySQL</li><li>Stripe</li></ul>
+                    </div>
+                </div>
+            </article>
 
+            <h3 class="otros-titulo reveal">Otros proyectos</h3>
 
+            <div class="filtros reveal">
+                <button class="activo" data-filtro="todos">Todos</button>
+                <button data-filtro="web">Web</button>
+                <button data-filtro="movil">Móvil</button>
+                <button data-filtro="ia">IA / Datos</button>
+                <button data-filtro="seguridad">Seguridad</button>
+            </div>
 
+            <div class="grid-proyectos">
+                <article class="proyecto destacado reveal" data-cat="web">
+                    <div class="proyecto-top">
+                        <span class="emoji"><svg class="ic"><use href="#i-cloud"/></svg></span>
+                        <span class="etiqueta">Destacado · SaaS</span>
+                    </div>
+                    <h3>CloudCore</h3>
+                    <p>Plataforma SaaS para administrar servidores VPS y sitios web: aprovisionamiento con un clic
+                        (Nginx, Node.js, PM2), despliegue vía SFTP, certificados SSL, firewall y logs en tiempo real,
+                        todo mediante conexiones SSH programáticas.</p>
+                    <ul class="stack">
+                        <li>NestJS</li><li>TypeScript</li><li>SSH</li><li>Nginx</li><li>PM2</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://cloudcore.lat/home" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg> Ver sitio <svg class="ic"><use href="#i-arrow"/></svg></a>
+                        <a href="https://github.com/JesusMarichal/CloudCore" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Código</a>
+                    </div>
+                </article>
 
+                <article class="proyecto reveal" data-cat="ia">
+                    <div class="proyecto-top">
+                        <span class="emoji"><svg class="ic"><use href="#i-chart"/></svg></span>
+                        <span class="etiqueta">IA · Rust</span>
+                    </div>
+                    <h3>Red Neuronal MLB</h3>
+                    <p>Red neuronal que predice partidos de béisbol de la MLB con datos reales de varias temporadas,
+                        25 características (Elo, forma reciente, pitcher abridor) y validación walk-forward.</p>
+                    <ul class="stack">
+                        <li>Rust</li><li>Burn</li><li>MLB Stats API</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://github.com/JesusMarichal/Red_neuronal" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Código</a>
+                    </div>
+                </article>
 
+                <article class="proyecto reveal" data-cat="seguridad">
+                    <div class="proyecto-top">
+                        <span class="emoji"><svg class="ic"><use href="#i-shield"/></svg></span>
+                        <span class="etiqueta">Ciberseguridad</span>
+                    </div>
+                    <h3>PESTesting Suite</h3>
+                    <p>Suite de ciberseguridad en Python puro: análisis profundo de URLs (phishing, DNS, HTTP, TLS)
+                        y escáner de puertos TCP multihilo con detección de servicios de riesgo.</p>
+                    <ul class="stack">
+                        <li>Python</li><li>Redes</li><li>CLI</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://github.com/JesusMarichal/PESTESTING" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Código</a>
+                    </div>
+                </article>
 
+                <article class="proyecto reveal" data-cat="web">
+                    <div class="proyecto-top">
+                        <span class="emoji"><svg class="ic"><use href="#i-pulse"/></svg></span>
+                        <span class="etiqueta">Trabajo de Grado</span>
+                    </div>
+                    <h3>Sistema de Clínica</h3>
+                    <p>Sistema de gestión para una clínica con frontend en Next.js y una API REST con arquitectura MVC
+                        sobre PostgreSQL.</p>
+                    <ul class="stack">
+                        <li>Next.js</li><li>Express</li><li>Sequelize</li><li>PostgreSQL</li><li>Tailwind</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://github.com/JesusMarichal/Trabajo_De_Grado_Clinica" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Código</a>
+                    </div>
+                </article>
 
+                <article class="proyecto reveal" data-cat="ia">
+                    <div class="proyecto-top">
+                        <span class="emoji"><svg class="ic"><use href="#i-scan"/></svg></span>
+                        <span class="etiqueta">Sistema Experto</span>
+                    </div>
+                    <h3>Clasificador de Crustáceos</h3>
+                    <p>Sistema experto con red neuronal integrada que identifica especies de la familia Petrolisthes
+                        a partir de un cuestionario de características físicas y ecológicas.</p>
+                    <ul class="stack">
+                        <li>Python</li><li>TensorFlow</li><li>Tkinter</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://jesusmarichal.github.io/Landingpage_Crustaceos/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg> Ver sitio <svg class="ic"><use href="#i-arrow"/></svg></a>
+                        <a href="https://github.com/JesusMarichal/SistemaExperto_Crustaceos" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Código</a>
+                    </div>
+                </article>
 
+                <article class="proyecto reveal" data-cat="movil">
+                    <div class="proyecto-top">
+                        <span class="emoji"><svg class="ic"><use href="#i-users"/></svg></span>
+                        <span class="etiqueta">Juego Móvil</span>
+                    </div>
+                    <h3>ImpostorVZ</h3>
+                    <p>Juego de deducción social para iOS y Android: los jugadores dan pistas sobre una palabra secreta
+                        mientras intentan descubrir al impostor.</p>
+                    <ul class="stack">
+                        <li>React Native</li><li>TypeScript</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://github.com/JesusMarichal/ImpostorVZ" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Código</a>
+                    </div>
+                </article>
 
+                <article class="proyecto reveal" data-cat="movil">
+                    <div class="proyecto-top">
+                        <span class="emoji"><svg class="ic"><use href="#i-music"/></svg></span>
+                        <span class="etiqueta">App Móvil</span>
+                    </div>
+                    <h3>Reproductor de Música</h3>
+                    <p>Aplicación multiplataforma para escuchar música, con versiones para Android, iOS, web y escritorio.</p>
+                    <ul class="stack">
+                        <li>Flutter</li><li>Dart</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://github.com/JesusMarichal/Reproductor_music" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Código</a>
+                    </div>
+                </article>
 
+                <article class="proyecto reveal" data-cat="ia">
+                    <div class="proyecto-top">
+                        <span class="emoji"><svg class="ic"><use href="#i-sigma"/></svg></span>
+                        <span class="etiqueta">Cálculo Numérico</span>
+                    </div>
+                    <h3>Métodos Numéricos</h3>
+                    <p>Programa con los métodos de Bisección, Newton-Raphson, sumas de Riemann y Trapecio.</p>
+                    <ul class="stack">
+                        <li>Python</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://github.com/JesusMarichal/Metodos-CalculoNumerico" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Código</a>
+                    </div>
+                </article>
+            </div>
 
+            <div class="mas-proyectos reveal">
+                <a href="https://github.com/JesusMarichal" target="_blank" rel="noopener" class="btn btn-ghost"><svg class="ic"><use href="#i-github"/></svg> Ver todo en GitHub <svg class="ic"><use href="#i-arrow"/></svg></a>
+            </div>
+        </section>
 
-    
+        <!-- Seccion Contacto -->
+        <section class="contacto" id="contacto">
+            <div class="contacto-box reveal">
+                <span class="eyebrow">// 03 · Contacto</span>
+                <h2>¿Trabajamos <span class="grad">juntos</span>?</h2>
+                <hr>
+                <p>Si tienes un proyecto en mente o una oportunidad, escríbeme.</p>
+                <div class="contacto-links">
+                    <a href="mailto:jesusmarichal0@gmail.com" class="btn btn-primary"><svg class="ic"><use href="#i-mail"/></svg> Escríbeme</a>
+                    <a href="https://wa.me/584123527776" target="_blank" rel="noopener" class="btn btn-ghost"><svg class="ic"><use href="#i-chat"/></svg> WhatsApp</a>
+                    <a href="https://github.com/JesusMarichal" target="_blank" rel="noopener" class="btn btn-ghost"><svg class="ic"><use href="#i-github"/></svg> GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="anio"></span> Jesús Marichal · Hecho a mano con HTML, CSS y JavaScript</p>
+    </footer>
 </body>
 </html>
